@@ -114,5 +114,6 @@
   	<module>service</module>
   	<module>utils</module>
   	<module>contract</module>
+  	<module>controller</module>
   </modules>
 </project>

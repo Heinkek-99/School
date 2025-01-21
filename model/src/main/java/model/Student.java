@@ -2,6 +2,8 @@ package model;
 
 import java.time.LocalDate;
 
+import javafx.beans.property.StringProperty;
+
 public class Student {
 	private int studentId;
 	private String matricule;
@@ -103,5 +105,6 @@ public class Student {
 	public void setPhone(int phone) {
 		this.phone = phone;
 	}
+
 
 }

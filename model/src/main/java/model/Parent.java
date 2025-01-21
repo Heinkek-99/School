@@ -32,4 +32,16 @@ public class Parent {
 	public void setNumberPhone(int numberPhone) {
 		this.numberPhone = numberPhone;
 	}
+	/**
+	 * @return the payments
+	 */
+	public List<Payment> getPayments() {
+		return payments;
+	}
+	/**
+	 * @param payments the payments to set
+	 */
+	public void setPayments(List<Payment> payments) {
+		this.payments = payments;
+	}
 }

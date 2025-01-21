@@ -1,8 +1,14 @@
 package model;
 
+import java.time.LocalDate;
+
 public class Teacher {
 	private int teacherId;
     private String name;
+    private LocalDate Dob;
+    private String phone;
+    private String Address;
+    private String Grade;
     private Group group; // Object reference instead of groupId
     private boolean isArchived;
 
@@ -44,5 +50,53 @@ public class Teacher {
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+	/**
+	 * @return the dob
+	 */
+	public LocalDate getDob() {
+		return Dob;
+	}
+	/**
+	 * @param dob the dob to set
+	 */
+	public void setDob(LocalDate dob) {
+		Dob = dob;
+	}
+	/**
+	 * @return the phone
+	 */
+	public String getPhone() {
+		return phone;
+	}
+	/**
+	 * @param phone the phone to set
+	 */
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	/**
+	 * @return the address
+	 */
+	public String getAddress() {
+		return Address;
+	}
+	/**
+	 * @param address the address to set
+	 */
+	public void setAddress(String address) {
+		Address = address;
+	}
+	/**
+	 * @return the grade
+	 */
+	public String getGrade() {
+		return Grade;
+	}
+	/**
+	 * @param grade the grade to set
+	 */
+	public void setGrade(String grade) {
+		Grade = grade;
 	}
 }
