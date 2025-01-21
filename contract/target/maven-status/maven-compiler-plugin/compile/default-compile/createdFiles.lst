@@ -1,0 +1,11 @@
+contract\ILog.class
+contract\IGroup.class
+contract\IDocument.class
+contract\IReceipt.class
+contract\IParent.class
+contract\IPayment.class
+contract\IRole.class
+contract\IPaymentDetail.class
+contract\IUser.class
+contract\IStudent.class
+contract\ITeacher.class

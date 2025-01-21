@@ -1,0 +1,10 @@
+service\ReceiptService.class
+service\LogService.class
+service\StudentService.class
+service\GroupService.class
+service\PaymentService.class
+service\TeacherService.class
+service\UserService.class
+service\ParentService.class
+service\RoleService.class
+service\DocumentService.class

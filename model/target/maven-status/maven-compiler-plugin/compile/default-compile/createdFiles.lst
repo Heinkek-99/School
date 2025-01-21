@@ -1,0 +1,11 @@
+model\Receipt.class
+model\Role.class
+model\Student.class
+model\Teacher.class
+model\Document.class
+model\PaymentDetail.class
+model\Parent.class
+model\Group.class
+model\Payment.class
+model\Log.class
+model\User.class

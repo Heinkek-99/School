@@ -1,0 +1,11 @@
+dao\GroupDAO.class
+dao\ParentDAO.class
+dao\PaymentDetailDAO.class
+dao\PaymentDAO.class
+dao\StudentDAO.class
+dao\UserDAO.class
+dao\RoleDAO.class
+dao\DocumentDAO.class
+dao\LogDAO.class
+dao\ReceiptDAO.class
+dao\TeacherDAO.class
