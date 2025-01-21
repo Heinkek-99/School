@@ -24,8 +24,13 @@ public class DocumentController {
         showSuccess("Document ajouté !");
     }
 
-	private void showSuccess(String string) {
-		// TODO Auto-generated method stub
-		
-	}
+    private void showError(String msg) { 
+        errorLabel.setStyle("-fx-text-fill: red;");
+        errorLabel.setText(msg); 
+    }
+
+    private void showSuccess(String msg) { 
+        errorLabel.setStyle("-fx-text-fill: green;");
+        errorLabel.setText(msg); 
+    }
 }

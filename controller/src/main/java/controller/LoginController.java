@@ -1,9 +1,18 @@
 package controller;
 
-import model.*;
-import service.*;
+import java.io.IOException;
+
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import model.User;
+import service.UserService;
+import utils.PasswordUtil;
 
 public class LoginController {
     @FXML private TextField usernameField;
@@ -14,8 +23,16 @@ public class LoginController {
 
     @FXML
     private void handleLogin() {
-        User user = userService.getUserByUsername(usernameField.getText());
-        if (user != null && user.getPassword().equals(passwordField.getText())) {
+        String username = usernameField.getText();
+        String password = passwordField.getText();
+
+        if(username.isEmpty() || password.isEmpty()) {
+            showError("Tous les champs sont obligatoires");
+            return;
+        }
+
+        User user = userService.getUserByUsername(username);
+        if(user != null && PasswordUtil.checkPassword(password, user.getPassword())) {
             loadDashboard(user);
         } else {
             showError("Identifiants invalides !");
@@ -23,9 +40,26 @@ public class LoginController {
     }
 
     private void showError(String error) {
-		// TODO Auto-generated method stub
-		
-	}
+        errorLabel.setStyle("-fx-text-fill: red;");
+        errorLabel.setText(error);
+    }
 
-	private void loadDashboard(User user) { /* Navigate to main view */ }
+    private void loadDashboard(User user) {
+        // Implémentation la navigation vers le tableau de bord
+    	try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainDashboard.fxml"));
+            Parent root = loader.load();
+            
+            DashboardController dashboardController = loader.getController();
+            dashboardController.initialize(user);
+            
+            Stage stage = (Stage) usernameField.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Tableau de bord - " + user.getRole().getRoleName());
+            
+        } catch (IOException e) {
+            showError("Erreur de chargement du tableau de bord");
+            e.printStackTrace();
+        }
+    }
 }

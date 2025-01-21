@@ -43,6 +43,11 @@ public class User {
 	public Role getRole() {
 		return role;
 	}
+	
+	public String getRoleName() {
+	    return role != null ? role.getRoleName() : "";
+	}
+	
 	/**
 	 * @param role the role to set
 	 */
